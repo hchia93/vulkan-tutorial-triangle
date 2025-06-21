@@ -26,8 +26,45 @@ To build and run this project, you will need the following software installed. T
 | **CMake**              | [Version 4.0.3+](https://cmake.org/download/)         |
 | **vcpkg**              | [Latest version from GitHub](https://github.com/microsoft/vcpkg) |
 
-Dependencies like `glfw` and `glm` are managed automatically by `vcpkg` and their versions are specified in the `vcpkg.json` file.
+Dependencies like `glfw`, `glm`, and `vulkan` are managed automatically by `vcpkg` and their versions are specified in the `vcpkg.json` file.
 
+## Installing vcpkg
+
+This project requires vcpkg to be installed at the `C:/` directory. Follow these steps to install it:
+
+### Step 1: Clone vcpkg to `C:/`
+Open Command Prompt or PowerShell as Administrator and run:
+
+```cmd
+cd C:\
+git clone https://github.com/Microsoft/vcpkg.git
+```
+
+> **Note:** Ensure you have Git installed. If the `git` command is not recognized, download and install Git from [https://git-scm.com/download/win](https://git-scm.com/download/win)
+
+### Step 2: Bootstrap vcpkg
+```cmd
+cd C:\vcpkg
+bootstrap-vcpkg.bat
+```
+
+### Step 3: Set Environment Variable
+Set the `VCPKG_ROOT` environment variable to point to your vcpkg installation:
+
+```cmd
+setx VCPKG_ROOT "C:\vcpkg"
+```
+
+**Note:** You may need to restart your command prompt or IDE for the environment variable to take effect.
+
+### Step 4: Verify Installation
+To verify vcpkg is working correctly:
+
+```cmd
+C:\vcpkg\vcpkg.exe version
+```
+
+You should see the vcpkg version information displayed.
 
 ## Instructions
 
@@ -42,7 +79,7 @@ SetupEnvironment.bat
 ```
 
 > **Note:** You must set the `VCPKG_ROOT` environment variable to point to your vcpkg installation directory before running the script.
-> `set VCPKG_ROOT=C:\path\to\your\vcpkg`
+> `set VCPKG_ROOT=C:\vcpkg`
 
 ### Step 2: Generate the Visual Studio Solution
 

@@ -8,10 +8,8 @@ set(CMAKE_VS_INCLUDE_ALL_BUILD 0)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Find Vulkan
-find_package(Vulkan REQUIRED)
-
 # Find packages using vcpkg
+find_package(Vulkan REQUIRED)
 find_package(glfw3 REQUIRED)
 find_package(glm REQUIRED)
 
@@ -26,14 +24,13 @@ add_executable(vulkan-tutorial-triangle
 # Set include directories
 target_include_directories(vulkan-tutorial-triangle PRIVATE
     src
-    ${Vulkan_INCLUDE_DIRS}
 )
 
 # Link libraries
 target_link_libraries(vulkan-tutorial-triangle
     glfw
     glm::glm
-    ${Vulkan_LIBRARIES}
+    Vulkan::Vulkan
 )
 
 # Set the default startup project in Visual Studio
