@@ -1,0 +1,111 @@
+# Build directories
+build/
+generated-vs/
+out/
+Debug/
+Release/
+x64/
+x86/
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+
+# Visual Studio files (old project files)
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.sln
+*.suo
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.sdf
+*.opensdf
+*.unsuccessfulbuild
+ipch/
+*.aps
+*.ncb
+*.opendb
+
+# Visual Studio Code
+.vscode/
+.vs/
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Debug files
+*.pdb
+*.ilk
+*.log
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+
+# vcpkg (if included in repo)
+vcpkg_installed/
+
+# Shader compilation artifacts
+*.spv
+*.vert.spv
+*.frag.spv
+
+# Generated documentation
+docs/build/
+docs/_build/
+
+# Package files
+*.zip
+*.tar.gz
+*.7z
+
+# Backup files
+*.bak
+*.backup 
