@@ -2,7 +2,7 @@
 
 This repository serves as my **Vulkan** learning project. The primary goal is to complete the tutorial [vulkan-tutorial.com](https://vulkan-tutorial.com/Drawing_a_triangle), understand the concepts, and able to render a legendary triangle at the end of the tutorial.
 
-The original project setup required to setup `glm` and `glfw` dependencies. To remove the complexity, I have utilized `Cursor` to configture a modern build workflow setup using **CMake**. I hope the project can be easily cloned and runnable using **Windows Batch Script**
+The original project setup required to setup `glm` and `glfw` dependencies. To remove the complexity, I have utilized `Cursor` to configture a modern build workflow setup using **CMake**. I hope the project cloning and dependencies setup is made easier using **Windows Batch Script**.
 
 
 ### ⚠️ Work-In-Progress
