@@ -29,7 +29,7 @@ To build and run this project, external dependencies are required. The `Dependen
 | Dependency             | Version/Details                                     |
 | ---------------------- | --------------------------------------------------- |
 | **GLFW3**              | Version 3.4 or higher                               |
-| **GLM**                | Version 1.0.1#3 (OpenGL Mathematics)               |
+| **GLM**                | Version 1.0.1#3 (OpenGL Mathematics)                |
 | **Vulkan**             | Latest version available in vcpkg                   |
 
 ## Project Structure
