@@ -3,7 +3,7 @@
 This repository serves as my **Vulkan** learning project. The primary goal is to complete the tutorial [vulkan-tutorial.com](https://vulkan-tutorial.com/Drawing_a_triangle), understand the concepts, and able to render a legendary triangle at the end of the tutorial.
 
 The original project setup required to setup `glm`, `glfw` and `VulkanSDK` dependencies. 
-This will be managed by the `vcpkg.json` along with [DependencyInstaller](https://github.com/hchia93/hchia93/blob/main/DependencyInstaller.bat-EN-README.md) and [SolutionGenerator]().
+This will be managed by the `vcpkg.json` along with [DependencyInstaller](https://github.com/hchia93/hchia93/blob/main/DependencyInstaller.bat-EN-README.md) and [SolutionGenerator](https://github.com/hchia93/hchia93/blob/main/VisualStudioSolutionGenerator.bat-EN-README.md).
 
 
 > **⚠️ Work-In-Progress** :
