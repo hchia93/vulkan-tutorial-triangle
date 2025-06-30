@@ -11,26 +11,7 @@ This will be managed by the `vcpkg.json` along with [DependencyInstaller](https:
 
 
 > **⚠️ Windows-Only Project**
-> This project is configured for a **Windows-only** environment. The setup scripts and Visual Studio solution generation are not designed for Linux or macOS, as I cannot verified the project generation on those platform at this time. 
-
-## Features
-
-- Basic Vulkan setup and initialization
-- Window creation using GLFW
-- Triangle rendering with vertex and fragment shaders
-- Validation layer support for debugging
-- Cross-platform build system using CMake
-
-
-## Prerequisites
-
-To build and run this project, external dependencies are required. The `DependencyInstaller.bat` script will install them accordingly.
-
-| Dependency             | Version/Details                                     |
-| ---------------------- | --------------------------------------------------- |
-| **GLFW3**              | Version 3.4 or higher                               |
-| **GLM**                | Version 1.0.1#3 (OpenGL Mathematics)               |
-| **Vulkan**             | Latest version available in vcpkg                   |
+> This project is configured for a **Windows-only** environment.
 
 ## Project Structure
 
@@ -38,6 +19,7 @@ To build and run this project, external dependencies are required. The `Dependen
 vulkan-tutorial-triangle/
 ├── CMakeLists.txt         # CMake build configuration
 ├── vcpkg.json             # Dependency manifest
+├── generate.bat           # Install dependencies and generate solution
 ├── README.md              # This file
 ├── src/                   # Source code
 │   ├── main.cpp
@@ -49,85 +31,41 @@ vulkan-tutorial-triangle/
     └── triangle.frag
 ```
 
-## Configuration
-The application can be configured by modifying `src/HTAConfig.h`:
+## Prerequisites
 
-- `HTA_WIDTH` / `HTA_HEIGHT`: Window dimensions
-- `bEnableValidationLayers`: Enable/disable Vulkan validation layers
+To build and run this project, external dependencies are required. The `DependencyInstaller.bat` script will install them accordingly.
 
-## Instructions
+| Dependency             | Version/Details                                     |
+| ---------------------- | --------------------------------------------------- |
+| **GLFW3**              | Version 3.4 or higher                               |
+| **GLM**                | Version 1.0.1#3 (OpenGL Mathematics)                |
+| **Vulkan**             | Latest version available in vcpkg                   |
 
-### Step 1: Installs Required Dependencies
 
-Execute the following file to install relevant dependencies:
+## Running the Project
 
-```cmd
-DependencyInstaller.bat
-```
+### Step 1: Generate Solution
 
-### Step 2: Generates the Visual Studio Solution
-
-Next, generate the Visual Studio Solution via the script. This creates the `generated-vs` directory.
+Execute the generator script. This will install dependencies and generate the Visual Studio solution:
 
 ```cmd
-VisualStudioSolutionGenerator.bat
+/generate.bat
 ```
 
-### Step 3: Build and Run
+The solution will be generated in 
+```cmd
+/generated-vs/
+```
+
+### Step 2: Build and Run
 
 Open the generated solution located at:
-- **`generated-vs/vulkan-tutorial-triangle.sln`**
-
-Press **F5** to build and run the application.
-
-> **⚠️ Important First-Time Setup**
-> The first time you open the solution, you may need to manually set the startup project.
-> 1. In the **Solution Explorer**, **right-click** on `vulkan-tutorial-triangle`.
-> 2. Select **"Set as StartUp Project"** from the menu.
->
-> You only need to do this once.
-
-The generated solution is for development and debugging purposes only. All configuration is handled by `CMakeLists.txt`.
-
-
-
-## Running the Application
-
-After building, run the executable:
-
-```bash
-# Windows
-./build/Release/vulkan-tutorial-triangle.exe
-
-# Linux/macOS
-./build/vulkan-tutorial-triangle
+```cmd
+/generated-vs/vulkan-tutorial-triangle.sln
 ```
 
-You should see a window with a colored triangle rendered using Vulkan.
+> **⚠️ Note:** Ensure the start-up project is `vulkan-tutorial-triangle`
 
-## Troubleshooting
-
-### Common Issues
-
-1. **Vulkan not found:**
-   - Ensure Vulkan SDK is installed and in PATH
-   - On Windows, install from: https://vulkan.lunarg.com/sdk/home
-
-2. **GLFW/GLM not found:**
-   - Ensure vcpkg is properly set up
-   - Check that `CMAKE_TOOLCHAIN_FILE` points to the correct vcpkg installation
-
-3. **Validation layers not working:**
-   - Ensure Vulkan SDK validation layers are installed
-   - Check that `VK_LAYER_PATH` environment variable is set correctly
-
-### Debug Mode
-
-To build in debug mode with validation layers:
-
-```bash
-cmake --build build --config Debug
-```
 
 ## Learning Resources
 
